@@ -41,4 +41,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * 生成用户的头像
+     * @return string
+     */
+    public function gravatar($size = '100')
+    {
+        //$hash = md5(strtolower(trim($this->attributes['email'])));
+        $hash = md5( strtolower( trim( 'summer@example.com' ) ) );
+        //return "https://cdn.v2ex.com/gravatar/$hash?s=$size";
+        // 上面的连接不可用，所有改用本地图片
+        return 'http://weibo_l9_2025_1.test/avatar/' . rand(1, 8) .'.png';
+    }
 }
