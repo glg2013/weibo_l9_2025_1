@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -36,4 +37,8 @@ Route::get('users/{user}/edit', [UsersController::class, 'edit'])->name('users.e
 Route::patch('users/{user}', [UsersController::class, 'update'])->name('users.update');
 Route::delete('users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
 
+// 会话路由
+Route::get('login', [SessionsController::class, 'create'])->name('login');
+Route::post('login', [SessionsController::class, 'store'])->name('login');
+Route::delete('logout', [SessionsController::class, 'destroy'])->name('logout');
 
