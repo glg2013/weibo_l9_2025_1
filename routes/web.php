@@ -43,3 +43,5 @@ Route::get('login', [SessionsController::class, 'create'])->name('login');
 Route::post('login', [SessionsController::class, 'store'])->name('login');
 Route::delete('logout', [SessionsController::class, 'destroy'])->name('logout');
 
+// 激活令牌
+Route::get('signup/confirm/{token}', [UsersController::class, 'confirmEmail'])->name('confirm_email');
