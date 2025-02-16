@@ -64,4 +64,9 @@ class User extends Authenticatable
         // 上面的连接不可用，所有改用本地图片
         return 'http://weibo_l9_2025_1.test/avatar/' . rand(1, 8) .'.png';
     }
+
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
 }
