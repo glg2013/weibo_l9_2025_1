@@ -12,6 +12,13 @@ use Illuminate\Support\Str;
 
 class PasswordController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('throttle:3,10')->only([
+            'sendResetLinkEmail',
+        ]);
+    }
+
     // 显示密码重置页面
     public function showLinkRequestForm() {
         return view('auth.passwords.email');
