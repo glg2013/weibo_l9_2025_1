@@ -23,5 +23,7 @@ class DatabaseSeeder extends Seeder
 
         // 调用用户表数据填充类
         $this->call(UsersTableSeeder::class);
+        // 调用微博数据填充类
+        $this->call(StatusesTableSeeder::class);
     }
 }
