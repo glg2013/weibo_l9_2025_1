@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowersController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\StaticPagesController;
@@ -62,3 +63,7 @@ Route::get('users/{user}/followings', [UsersController::class, 'followings'])->n
 
 // 粉丝列表
 Route::get('users/{user}/followers', [UsersController::class, 'followers'])->name('users.followers');
+
+// 关注与取消关注
+Route::post('users/followers/{user}', [FollowersController::class, 'store'])->name('followers.store');
+Route::delete('users/followers/{user}', [FollowersController::class, 'destroy'])->name('followers.destroy');
