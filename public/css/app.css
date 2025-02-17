@@ -12018,11 +12018,11 @@ section.user_info h1, section.user_info .h1 {
 }
 
 /* Users edit */
-.gravatar_edit {
+pp .gravatar_edit {
   margin: 15px auto;
   text-align: center;
 }
-.gravatar_edit .gravatar {
+pp .gravatar_edit .gravatar {
   float: none;
   max-width: 100px;
 }
@@ -12031,4 +12031,32 @@ section.user_info h1, section.user_info .h1 {
 .status-delete-btn {
   width: -moz-max-content;
   width: max-content;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+}
+.stats a {
+  float: left;
+  padding: 0 10px;
+  text-align: center;
+  width: 33%;
+  border-left: 1px solid #eee;
+  color: #33383c;
+  text-decoration: none;
+}
+.stats a:first-child {
+  padding-left: 0;
+  border: 0;
+}
+.stats a:hover {
+  text-decoration: none;
+  color: #337ab7;
+}
+.stats strong {
+  display: block;
+  font-size: 1.2em;
+  color: black;
 }
